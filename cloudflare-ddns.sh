@@ -6,6 +6,7 @@ auth_key="*****************"   #你的cloudflare账户Globel ID ,your cloudflare
 zone_name="Your main Domain"   #你的域名,your root domain address
 record_name="Your Full Domain" #完整域名,your full domain address
 record_type="AAAA"             #A or AAAA,ipv4 或 ipv6解析
+is_proxy="true"                #是否开启代理（小黄花）
 
 ip_index="local"            #use "internet" or "local",使用本地方式还是网络方式获取地址
 eth_card="eth0"             #使用本地方式获取ip绑定的网卡，默认为eth0，仅本地方式有效,the default ethernet card is eth0
@@ -87,7 +88,7 @@ update=$(curl -s -X PUT "https://api.cloudflare.com/client/v4/zones/$zone_identi
     -H "X-Auth-Email: $auth_email" \
     -H "X-Auth-Key: $auth_key" \
     -H "Content-Type: application/json" \
-    --data "{\"type\":\"$record_type\",\"name\":\"$record_name\",\"content\":\"$ip\",\"ttl\":1,\"proxied\":false}")
+    --data "{\"type\":\"$record_type\",\"name\":\"$record_name\",\"content\":\"$ip\",\"ttl\":1,\"proxied\":$is_proxy}")
 
 
 #反馈更新情况 gave the feedback about the update statues
