@@ -1,11 +1,10 @@
 # CloudFlare DDNS script/Raspberry pi IPV6 DDNS Solution 
 
-#### cloudflare ddns 脚本/树莓派IPV6 DDNS解决方案
+#### cloudflare ddns 脚本/armbian(N1) IPV6 DDNS解决方案
 
 中文 | [English](/README-EN.md)
 
-## 更新[Server酱支持版本](https://github.com/wherelse/Raspberrypi-IPV6-DDNS-Solution/tree/ServerPush) 
-
+## 修改(相当于原版)
 1. 修改为ip addr命令而不是 ifconfig
 2. 增加打开小黄花功能即cloudflare proxy，只有ipv6的机器，可以通过proxy的方式让ipv4的客户端也能访问（基于协议的应用）。
 
