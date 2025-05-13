@@ -4,7 +4,7 @@
 
 中文 | [English](/README-EN.md)
 
-## 修改(相当于原版)
+## 修改(相对原版)
 1. 修改为ip addr命令而不是 ifconfig
 2. 增加打开小黄花功能即cloudflare proxy，只有ipv6的机器，可以通过proxy的方式让ipv4的客户端也能访问（基于协议的应用）。
 
