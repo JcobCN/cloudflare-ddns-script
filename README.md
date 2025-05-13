@@ -6,6 +6,9 @@
 
 ## 更新[Server酱支持版本](https://github.com/wherelse/Raspberrypi-IPV6-DDNS-Solution/tree/ServerPush) 
 
+1. 修改为ip addr命令而不是 ifconfig
+2. 增加打开小黄花功能即cloudflare proxy，只有ipv6的机器，可以通过proxy的方式让ipv4的客户端也能访问（基于协议的应用）。
+
 ### 概述
 本脚本是基于cloudflare API的DDNS脚本，支持IPV4和IPV6，可通过网络方式和本地方式获取脚本安装主机的IP地址，理论支持所有使用linux系统的主机，已在debian和ubuntu上测试可用。
 
@@ -51,7 +54,7 @@ bash /home/username/cloudflare-ddns.sh
 为了实现动态域名解析，必须让脚本保持运行以获取IP状态，这里使用系统crontab定时
 在命令行输入：`crontab -e` 后在文件最后添加以下内容
 ```shell
-*/5 * * * *  /home/username/cloudflare-ddns.sh >/dev/null 2>&1
+*/5 * * * *  cd /home/username && bash /home/username/cloudflare-ddns.sh
 ```
 更改完成后保存并退出。
 在这里将脚本设置为每五分钟执行一次 `cloudflare-ddns.sh` 脚本，就可以实现动态域名解析了。
